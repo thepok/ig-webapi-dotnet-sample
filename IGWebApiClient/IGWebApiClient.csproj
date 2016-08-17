@@ -208,8 +208,8 @@
     <Compile Include="Security\Rsa.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="DotNetClient_N2">
-      <HintPath>..\packages\3rdPartyDlls\DotNetClient_N2.dll</HintPath>
+    <Reference Include="DotNetClient_WinRT">
+      <HintPath>..\packages\3rdPartyDlls\DotNetClient_WinRT.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Security">
       <HintPath>..\packages\3rdPartyDlls\Mono.Security.dll</HintPath>
