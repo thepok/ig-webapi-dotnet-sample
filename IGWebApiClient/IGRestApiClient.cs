@@ -13,7 +13,7 @@ using dto.endpoint.marketdetails.v2;
 using dto.endpoint.positions.create.otc.v1;
 using dto.endpoint.positions.edit.v1;
 using dto.endpoint.positions.close.v1;
-using dto.endpoint.prices.v2;
+using dto.endpoint.prices.v3;
 using dto.endpoint.search;
 using dto.endpoint.watchlists.manage.delete;
 using dto.endpoint.watchlists.manage.create;
@@ -462,9 +462,12 @@ namespace IGWebApiClient
         ///@requestParam enddate End date (yyyy:MM:dd-HH:mm:ss). Must be later then the start date.
         ///</Summary>
 
-        public async Task<IgResponse<PriceList>> priceSearchByDate(string epic, string resolution, string startdate, string enddate)
+        public async Task<IgResponse<PriceList>> priceSearchByDate(string epic, string resolution, DateTime startdate, DateTime enddate)
         {
-            return await _igRestService.RestfulService<PriceList>("/gateway/deal/prices/" + epic + "/" + resolution + "?startdate=" + startdate + "&enddate=" + enddate, HttpMethod.Get, "1", _conversationContext);
+            var start = startdate.ToString("yyyy-MM-ddTHH:mm:ss");
+            var stop = enddate.ToString("yyyy-MM-ddTHH:mm:ss");
+            return await _igRestService.RestfulService<PriceList>("/gateway/deal/prices/" + epic + "?resolution=" + resolution + "&from=" + start + "&to=" + stop, HttpMethod.Get, "3", _conversationContext);
+            
         }
 
         ///<Summary>
