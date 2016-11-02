@@ -466,7 +466,7 @@ namespace IGWebApiClient
         {
             var start = startdate.ToString("yyyy-MM-ddTHH:mm:ss");
             var stop = enddate.ToString("yyyy-MM-ddTHH:mm:ss");
-            return await _igRestService.RestfulService<PriceList>("/gateway/deal/prices/" + epic + "?resolution=" + resolution + "&from=" + start + "&to=" + stop, HttpMethod.Get, "3", _conversationContext);
+            return await _igRestService.RestfulService<PriceList>("/gateway/deal/prices/" + epic + "?resolution=" + resolution + "&from=" + start + "&to=" + stop + "&pageSize=0", HttpMethod.Get, "3", _conversationContext);
             
         }
 
