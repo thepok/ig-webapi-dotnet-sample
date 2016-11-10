@@ -41,7 +41,7 @@
   <ItemGroup>
     <Reference Include="Accessibility" />
     <Reference Include="DotNetClient_N2">
-      <HintPath>..\packages\3rdPartyDlls\DotNetClient_N2.dll</HintPath>
+      <HintPath>..\3rdPartyDlls\DotNetClient_N2.dll</HintPath>
     </Reference>
     <Reference Include="GalaSoft.MvvmLight, Version=5.3.0.19026, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
